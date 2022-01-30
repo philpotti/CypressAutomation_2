@@ -15,6 +15,7 @@ describe('My First Test Suite', function() {
     cy.get('@productLocator').find('.product').eq(2).contains('ADD TO CART').click().then(function(){
         console.log('sf')
     })
+
     cy.get('@productLocator').find('.product').each(($el, index, $list) => {
     const textVeg = $el.find('h4.product-name').text()
     if(textVeg.includes('Cashews')) 
@@ -22,15 +23,11 @@ describe('My First Test Suite', function() {
         cy.wrap($el).find('button').click()
     }
     //Grabbing Logo text
-    cy.get('.brand.greenLogo').then(function(logoelement)
+})
+cy.get('.brand.greenLogo').then(function(logoelement)
     {
         cy.log(logoelement.text())
     })
-
-cy.get('.brand.greenLogo').then(function(logoelement) {
-    cy.log(logoelement.text())
-})
      
-            })
-        })
     })
+})
