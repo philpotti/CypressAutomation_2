@@ -24,14 +24,6 @@ describe('My First Test Suite', function() {
     }
 
 })
-    //assert if logo text is currently displayed 
-    cy.get('.brand').should('have.text', 'GREENKART')
-
-    //Grabbing Logo text
-    cy.get('.brand.greenLogo').then(function(logoelement)
-     {
-        cy.log(logoelement.text())
-     })
-     
+   
     })
 })
