@@ -9,9 +9,7 @@ describe("My 2nd Test Suite", function () {
     //Parent child chainings should
     cy.get(".products").as("productLocator"); // declaring .products as a variable
 
-    cy.get("@productLocator")
-      .find(".product")
-      .each(($el, index, $list) => {
+    cy.get("@productLocator").find(".product").each(($el, index, $list) => {
         const textVeg = $el.find("h4.product-name").text();
         if (textVeg.includes("Cashews")) {
           cy.wrap($el).find("button").click();
