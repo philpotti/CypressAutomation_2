@@ -31,8 +31,6 @@ this.data=data
       cy.selectProduct(element)
     })
 
-
-    
   });
 
 });
