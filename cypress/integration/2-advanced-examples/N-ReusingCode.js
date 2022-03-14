@@ -1,4 +1,5 @@
 /// <reference types="Cypress" />
+import HomePage from '../pageObjects/HomePage'
 
 describe("FrameWork example", function () {
   
@@ -11,19 +12,20 @@ this.data=data
     })
 
   it("Demo example", function () {
+const homePage = new HomePage()
 
     cy.visit("https://rahulshettyacademy.com/angularpractice/");
-    cy.get("input[name='name']:nth-child(2)").type(this.data.name)
-    cy.get('select').select(this.data.gender)
-    cy.get(':nth-child(4) > .ng-untouched').should('have.value',this.data.name)
-    cy.get("input[name='name']:nth-child(2)").should('have.attr','minlength','2')
-    cy.get('#inlineRadio3').should('be.disabled')
+    homePage.getEditBox().type(this.data.name)
+    homePage.getGender().select(this.data.gender)
+    homePage.getTwoWayDataBinding().should('have.value',this.data.name)
+    homePage.getEditBox().should('have.attr','minlength','2')
+    homePage.getEnterpreneaur().should('be.disabled')
     //pause is to debug application
     //cy.pause()
-    cy.get(':nth-child(2) > .nav-link').click()
+    homePage.getShopTab().click()
 
 
-    //Check Support folder and in there, the command.js
+    //Check Support folder and in there, the command.js AND also fixtures > example.json
     
     this.data.productName
 
