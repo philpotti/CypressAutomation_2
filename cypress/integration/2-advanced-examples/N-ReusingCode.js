@@ -27,7 +27,7 @@ describe('FrameWork example', function () {
 		//Check Support folder and in there, the command.js AND also fixtures > example.json
 
 		this.data.productName;
-
+		//Look this up in Folder > fixtures / example.json and in support / commands.js
 		this.data.productName.forEach(function (element) {
 			cy.selectProduct(element);
 		});
