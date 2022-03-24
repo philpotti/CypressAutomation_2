@@ -1,5 +1,6 @@
 /// <reference types="Cypress" />
 import HomePage from '../pageObjects/HomePage';
+import ProductPage from '../pageObjects/ProductPage';
 
 describe('FrameWork example', function () {
 	before(function () {
@@ -11,13 +12,14 @@ describe('FrameWork example', function () {
 
 	it('Demo example', function () {
 		const homePage = new HomePage();
+		const productPage = new ProductPage();
 
 		cy.visit('https://rahulshettyacademy.com/angularpractice/');
 		homePage.getEditBox().type(this.data.name);
 		homePage.getGender().select(this.data.gender);
 		homePage.getTwoWayDataBinding().should('have.value', this.data.name);
 		homePage.getEditBox().should('have.attr', 'minlength', '2');
-		homePage.getEnterpreneaur().should('be.disabled');
+		homePage.getEntrepreneaur().should('be.disabled');
 		//pause is to debug application
 		//cy.pause()
 		homePage.getShopTab().click();
@@ -28,6 +30,35 @@ describe('FrameWork example', function () {
 
 		this.data.productName.forEach(function (element) {
 			cy.selectProduct(element);
+		});
+		productPage.checkOutButton().click();
+		var sum = 0;
+		cy.get('tr td:nth-child(4) strong')
+			.each(($el, index, $list) => {
+				const amount = $el.text();
+				var result = amount.split(' ');
+				result = result[1].trim();
+				sum = Number(sum) + Number(result);
+			})
+			.then(function () {
+				cy.log(sum);
+			});
+		cy.get('h3 strong').then(function (element) {
+			const amount = element.text();
+			var result = amount.split(' ');
+			var total = result[1].trim();
+			expect(Number(total)).to.equal(Number(sum));
+		});
+
+		cy.contains('Checkout').click();
+		cy.get('#country').type('India');
+		cy.get('.suggestions > ul > li > a').click();
+		cy.get("input[id='checkbox2']").click({ force: true });
+		cy.get('input.btn.btn-success.btn-lg').click();
+		//cy.get('div.alert').should('have.text', 'Success! Thank you! Your order will be delivered in next few weeks :-).');
+		cy.get('.alert').then(function (element) {
+			const actualText = element.text();
+			expect(actualText.includes('Success')).to.be.true;
 		});
 	});
 });
