@@ -1,5 +1,8 @@
 {
 	"defaultCommandTimeout": 10000,
 	"pageLoadTimeout": 60000,
-	"experimentalSourceRewriting": true
+	"experimentalSourceRewriting": true,
+	"env": {
+		"url": "https://rahulshettyacademy.com"
+	}
 }
