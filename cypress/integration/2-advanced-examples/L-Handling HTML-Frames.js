@@ -9,6 +9,6 @@ describe('Frames Test', function () {
 
 		cy.iframe().find("a[href*='mentorship']").eq(0).click();
 
-		//cy.iframe().find('.pricing-title.text-white.ls-1').should('have.length', 2);
+		cy.iframe().find('.pricing-title.text-white.ls-1').should('have.length', 2);
 	});
 });
