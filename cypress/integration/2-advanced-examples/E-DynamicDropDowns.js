@@ -2,7 +2,7 @@
 
 describe('My 5th Test Suite', function () {
 	it('My 5th Test Case', function () {
-		cy.visit('https://rahulshettyacademy.com/AutomationPractice/');
+		cy.visit(Cypress.env('url') + '/AutomationPractice/');
 
 		cy.get('#autocomplete').type('ind');
 

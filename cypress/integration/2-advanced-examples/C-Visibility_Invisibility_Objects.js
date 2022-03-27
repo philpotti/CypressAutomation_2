@@ -2,7 +2,7 @@
 
 describe('My 3rd Test Suite', function () {
 	it('My 3rd Test Case', function () {
-		cy.visit('https://rahulshettyacademy.com/AutomationPractice/');
+		cy.visit(Cypress.env('url') + '/AutomationPractice/');
 
 		cy.get('#displayed-text').should('be.visible');
 		cy.get('#hide-textbox').click();

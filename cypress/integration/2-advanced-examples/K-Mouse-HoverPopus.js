@@ -2,7 +2,7 @@
 
 describe('My 8th Test Suite', function () {
 	it('My 11th Test Case', function () {
-		cy.visit('https://rahulshettyacademy.com/AutomationPractice/');
+		cy.visit(Cypress.env('url') + '/AutomationPractice/');
 
 		//Clicking on a NON-hidden mode
 

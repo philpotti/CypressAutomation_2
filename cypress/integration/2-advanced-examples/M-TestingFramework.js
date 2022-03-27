@@ -9,7 +9,7 @@ describe('FrameWork example', function () {
 	});
 
 	it('Demo example', function () {
-		cy.visit('https://rahulshettyacademy.com/angularpractice/');
+		cy.visit(Cypress.env('url') + '/angularpractice/');
 		cy.get("input[name='name']:nth-child(2)").type(this.data.name);
 		cy.get('select').select(this.data.gender);
 		cy.get(':nth-child(4) > .ng-untouched').should('have.value', this.data.name);

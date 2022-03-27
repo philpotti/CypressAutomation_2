@@ -8,7 +8,7 @@ describe('My 9th Test Suite', function () {
 		cy.get('#opentab').invoke('removeAttr', 'target').click();
 
 		cy.url().should('include', 'rahulshettyacademy'); // If it includes 'part of html str'
-		cy.url().should('eq', 'https://www.rahulshettyacademy.com/#/index'); // If it is exactly equal to 'html str'
+		cy.url().should('eq', 'https://www.rahulshettyacademy.com/'); // If it is exactly equal to 'html str'
 
 		cy.go('back'); //Go back to the previous page
 	});
