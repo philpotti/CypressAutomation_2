@@ -14,7 +14,7 @@ describe('FrameWork example', function () {
 		const homePage = new HomePage();
 		const productPage = new ProductPage();
 
-		cy.visit(Cypress.env('url') + '/angularpractice/');
+		cy.visit('https://rahulshettyacademy.com/angularpractice/');
 		homePage.getEditBox().type(this.data.name);
 		homePage.getGender().select(this.data.gender);
 		homePage.getTwoWayDataBinding().should('have.value', this.data.name);
@@ -27,7 +27,7 @@ describe('FrameWork example', function () {
 		//Check Support folder and in there, the command.js AND also fixtures > example.json
 
 		this.data.productName;
-		//Look this up in Folder > fixtures / example.json and in support / commands.js
+		//Look this up in Folder > fixtures / example.json and in suppz
 		this.data.productName.forEach(function (element) {
 			cy.selectProduct(element);
 		});

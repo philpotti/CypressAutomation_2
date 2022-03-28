@@ -1,23 +1,80 @@
 {
   "stats": {
-    "suites": 0,
-    "tests": 0,
-    "passes": 0,
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-03-27T21:27:49.258Z",
-    "end": "2022-03-27T21:27:49.258Z",
-    "duration": 0,
-    "testsRegistered": 0,
-    "passPercent": null,
-    "pendingPercent": null,
+    "start": "2022-03-28T13:10:30.479Z",
+    "end": "2022-03-28T13:11:03.332Z",
+    "duration": 32853,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false
   },
   "results": [
-    false
+    {
+      "uuid": "d9a81a1b-0ac8-49e6-b791-8592313ca4db",
+      "title": "",
+      "fullFile": "cypress/integration/2-advanced-examples/N-ReusingCode.js",
+      "file": "cypress/integration/2-advanced-examples/N-ReusingCode.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2ba2d4a7-b58a-4b3c-9a14-28cd84ef1273",
+          "title": "FrameWork example",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Demo example",
+              "fullTitle": "FrameWork example Demo example",
+              "timedOut": null,
+              "duration": 26905,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const homePage = new _HomePage.default();\nconst productPage = new _ProductPage.default();\ncy.visit('https://rahulshettyacademy.com/angularpractice/');\nhomePage.getEditBox().type(this.data.name);\nhomePage.getGender().select(this.data.gender);\nhomePage.getTwoWayDataBinding().should('have.value', this.data.name);\nhomePage.getEditBox().should('have.attr', 'minlength', '2');\nhomePage.getEntrepreneaur().should('be.disabled'); //pause is to debug application\n//cy.pause()\nhomePage.getShopTab().click(); //Check Support folder and in there, the command.js AND also fixtures > example.json\nthis.data.productName; //Look this up in Folder > fixtures / example.json and in suppz\nthis.data.productName.forEach(function (element) {\n  cy.selectProduct(element);\n});\nproductPage.checkOutButton().click();\nvar sum = 0;\ncy.get('tr td:nth-child(4) strong').each(($el, index, $list) => {\n  const amount = $el.text();\n  var result = amount.split(' ');\n  result = result[1].trim();\n  sum = Number(sum) + Number(result);\n}).then(function () {\n  cy.log(sum);\n});\ncy.get('h3 strong').then(function (element) {\n  const amount = element.text();\n  var result = amount.split(' ');\n  var total = result[1].trim();\n  expect(Number(total)).to.equal(Number(sum));\n});\ncy.contains('Checkout').click();\ncy.get('#country').type('India');\ncy.get('.suggestions > ul > li > a').click();\ncy.get(\"input[id='checkbox2']\").click({\n  force: true\n});\ncy.get('input.btn.btn-success.btn-lg').click(); //cy.get('div.alert').should('have.text', 'Success! Thank you! Your order will be delivered in next few weeks :-).');\ncy.get('.alert').then(function (element) {\n  const actualText = element.text();\n  expect(actualText.includes('Success')).to.be.true;\n});",
+              "err": {},
+              "uuid": "ab3f304f-c94e-4c88-97c6-b1ca76c68cee",
+              "parentUUID": "2ba2d4a7-b58a-4b3c-9a14-28cd84ef1273",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ab3f304f-c94e-4c88-97c6-b1ca76c68cee"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 26905,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
   ],
   "meta": {
     "mocha": {

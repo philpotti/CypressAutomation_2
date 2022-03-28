@@ -7,5 +7,6 @@
 	},
 	"modifyObstructiveCode": true,
 	"projectId": "s6ev7a",
-	"reporter": "reporters/custom.js"
+	"reporter": "mochawesome",
+	"video": false
 }
