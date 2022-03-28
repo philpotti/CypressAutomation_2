@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-03-28T13:35:46.103Z",
+    "end": "2022-03-28T13:36:06.685Z",
+    "duration": 20582,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "408de2dc-9ea2-40f1-8b26-51af12098ccf",
+      "title": "",
+      "fullFile": "cypress/integration/2-advanced-examples/E-DynamicDropDowns.js",
+      "file": "cypress/integration/2-advanced-examples/E-DynamicDropDowns.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "151b084b-d371-4e8b-9d52-76e89c5e3377",
+          "title": "My 5th Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My 5th Test Case",
+              "fullTitle": "My 5th Test Suite My 5th Test Case",
+              "timedOut": null,
+              "duration": 16579,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(Cypress.env('url') + '/AutomationPractice/');\ncy.get('#autocomplete').type('ind');\ncy.get('.ui-menu-item div').each(($el, index, $list) => {\n  if ($el.text() === 'India') {\n    cy.wrap($el).click();\n  }\n});\ncy.get('#autocomplete').should('have.value', 'India');",
+              "err": {},
+              "uuid": "78f6fd1f-2f41-4358-bd91-de07d37d115a",
+              "parentUUID": "151b084b-d371-4e8b-9d52-76e89c5e3377",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "78f6fd1f-2f41-4358-bd91-de07d37d115a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16579,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

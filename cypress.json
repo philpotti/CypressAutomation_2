@@ -8,5 +8,11 @@
 	"modifyObstructiveCode": true,
 	"projectId": "s6ev7a",
 	"reporter": "mochawesome",
+	"reporterOptions": {
+		"reportDir": "cypress/results",
+		"overwrite": false,
+		"html": false,
+		"json": true
+	},
 	"video": false
 }
